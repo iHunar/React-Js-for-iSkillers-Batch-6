@@ -1,11 +1,10 @@
 import React from "react";
 import "./App.css";
-import { Home, AboutUs } from "./pages";
+import RouterNavigation from "./config/router";
 const App = () => {
   return (
     <div>
-      <Home />
-      <AboutUs />
+      <RouterNavigation />
     </div>
   );
 };
