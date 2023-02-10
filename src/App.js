@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import RouterNavigation from "./config/router";
+import ReactNavigation from "./config/navigation";
 const App = () => {
   return (
     <div>
-      <RouterNavigation />
+      <ReactNavigation />
     </div>
   );
 };

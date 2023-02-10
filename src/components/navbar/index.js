@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <div style={{ backgroundColor: "gray" }}>
-      <h1>Navbar</h1>
+    <div>
+      <h1>Navbar com</h1>
       <button onClick={() => navigate("/")}>Home</button>
-      <button onClick={() => navigate("/pages/about-us")}>About</button>
+      <button onClick={() => navigate("/about-us")}>About Us</button>
     </div>
   );
 };

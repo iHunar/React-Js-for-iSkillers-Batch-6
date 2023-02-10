@@ -1,5 +1,4 @@
 import React from "react";
-import './index.css';
 import { Navbar } from "../../components";
 const AboutUs = () => {
   return (
