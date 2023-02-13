@@ -1,11 +1,6 @@
 import React from "react";
-import "./App.css";
-import ReactNavigation from "./config/navigation";
+import RouterNavigation from "./config/navigation";
 const App = () => {
-  return (
-    <div>
-      <ReactNavigation />
-    </div>
-  );
+  return <RouterNavigation />;
 };
 export default App;
