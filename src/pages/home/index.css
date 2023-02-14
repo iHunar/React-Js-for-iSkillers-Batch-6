@@ -1,0 +1,6 @@
+.button {
+  background-color: gray;
+}
+.selected-button {
+  background-color: red;
+}
