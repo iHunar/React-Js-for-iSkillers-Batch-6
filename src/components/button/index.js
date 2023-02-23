@@ -1,6 +1,5 @@
 import React from "react";
 const Button = (props) => {
-  console.log("button >> ", props);
   return (
     <button
       style={{
