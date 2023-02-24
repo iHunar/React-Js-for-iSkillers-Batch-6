@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Input } from "../../components";
+import { Button, Input, Card, Header } from "../../components";
 const Home = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -68,6 +68,15 @@ const Home = () => {
         })}
       </select>
       <Button title="Submit" onClick={SubmitHandler} />
+      {List.map((v, i) => {
+        return <Card heading={v.value} data={List} />;
+      })}
+
+      <Header>
+        <p>fsdfsfsfdsds</p>
+        <h1>fdsfdsf</h1>
+        <img src="https://firebasestorage.googleapis.com/v0/b/admission-portal-11282.appspot.com/o/fivePoints.png?alt=media&token=33ddfcb1-14d4-42b3-9b8c-983c7e0cebad" height={"150px"}/>
+      </Header>
     </div>
   );
 };

@@ -1,3 +1,5 @@
 import Button from "./button";
 import Input from "./input";
-export { Button, Input };
+import Card from "./card";
+import Header from "./header";
+export { Button, Input, Card, Header };
