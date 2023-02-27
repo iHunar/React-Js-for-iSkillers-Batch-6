@@ -41,13 +41,13 @@ const Home = () => {
         onChange={(e) => setName(e.target.value)}
       />
       <button onClick={SubmitHandler}>Submit</button> */}
-      <Input
+      {/* <Input
         type="email"
         placeholder="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-      />
-      <Input
+      /> */}
+      {/* <Input
         type=""
         placeholder="user name"
         value={userName}
@@ -55,11 +55,11 @@ const Home = () => {
       />
 
       <select onChange={(e) => setType(e.target.value)}>
-        <option value="">Select</option>
+        <option value="">Select</option> */}
         {/* <option value="A">A</option>
         <option value="B">B</option>
         <option value="C">C</option> */}
-        {List.map((v, i) => {
+        {/* {List.map((v, i) => {
           return (
             <option value={v.value} key={i}>
               {v.value}
@@ -76,7 +76,11 @@ const Home = () => {
         <p>fsdfsfsfdsds</p>
         <h1>fdsfdsf</h1>
         <img src="https://firebasestorage.googleapis.com/v0/b/admission-portal-11282.appspot.com/o/fivePoints.png?alt=media&token=33ddfcb1-14d4-42b3-9b8c-983c7e0cebad" height={"150px"}/>
-      </Header>
+      </Header> */}
+
+<button onClick={()=> navigate("blog")}>Blog</button>
+
+
     </div>
   );
 };
