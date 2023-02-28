@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Input, Card, Header } from "../../components";
+import { Button, Input, Card, Header, ClassComponent } from "../../components";
 const Home = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -56,10 +56,10 @@ const Home = () => {
 
       <select onChange={(e) => setType(e.target.value)}>
         <option value="">Select</option> */}
-        {/* <option value="A">A</option>
+      {/* <option value="A">A</option>
         <option value="B">B</option>
         <option value="C">C</option> */}
-        {/* {List.map((v, i) => {
+      {/* {List.map((v, i) => {
           return (
             <option value={v.value} key={i}>
               {v.value}
@@ -78,9 +78,9 @@ const Home = () => {
         <img src="https://firebasestorage.googleapis.com/v0/b/admission-portal-11282.appspot.com/o/fivePoints.png?alt=media&token=33ddfcb1-14d4-42b3-9b8c-983c7e0cebad" height={"150px"}/>
       </Header> */}
 
-<button onClick={()=> navigate("blog")}>Blog</button>
+      <button onClick={() => navigate("blog")}>Blog</button>
 
-
+      <ClassComponent />
     </div>
   );
 };

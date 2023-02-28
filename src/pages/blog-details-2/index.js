@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -45,8 +45,11 @@ import {
 
 const BlogDetails2 = () => {
   const params = useParams();
-  console.log("params", params);
+  const location = useLocation();
+  console.log("location", location);
+
   const [postData, setPostData] = useState(null);
+  let url = "https://jazzy-cupcake-92525c.netlify.app";
   const List = [
     {
       id: "user1",
@@ -73,7 +76,6 @@ const BlogDetails2 = () => {
       des: "Each believer has the potential to light a spark that sets the world ablaze. That’s why you’re dangerous. That’s probably why it’s easier, less messy, and more convenient to keep you packed like a lemming into predictable rows of pews week after week. Acts is the story of the Spirit of God raging like a…",
     },
   ];
-
   useEffect(() => {
     let filtered = List.filter(function (val) {
       return val.id === params.id;
@@ -89,14 +91,10 @@ const BlogDetails2 = () => {
           <h1>{postData[0].title}</h1>
           <h6>{postData[0].date}</h6>
           <p>{postData[0].des}</p>
-          <FacebookShareButton
-            url={"https://www.npmjs.com/package/react-share-social"}
-          >
+          <FacebookShareButton url={url + location.pathname}>
             <FacebookIcon size={32} round={true} />
           </FacebookShareButton>
-          <EmailShareButton
-            url={"https://www.npmjs.com/package/react-share-social"}
-          >
+          <EmailShareButton url={url + location.pathname}>
             <EmailIcon size={32} round={true} />
           </EmailShareButton>
         </div>
