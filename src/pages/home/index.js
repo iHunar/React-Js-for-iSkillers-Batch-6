@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import "./index.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, Input, Card, Header, ClassComponent } from "../../components";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  Button,
+  Input,
+  Card,
+  Header,
+  ClassComponent,
+  SearchAppBar,
+} from "../../components";
+import firebase from "../../config/firebase";
 const Home = () => {
   const navigate = useNavigate();
+  const auth = getAuth();
+
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
   const [type, setType] = useState("");
@@ -23,8 +34,23 @@ const Home = () => {
       value: "A",
     },
   ];
+
+  const SignUp = () => {
+    createUserWithEmailAndPassword(auth, "abc@gmail.com", "password")
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  };
   return (
     <div>
+      <SearchAppBar />
       <h1>Home Page</h1>
       {/* <a href="/about-us">About Us</a>
       <br />
@@ -77,7 +103,7 @@ const Home = () => {
         <h1>fdsfdsf</h1>
         <img src="https://firebasestorage.googleapis.com/v0/b/admission-portal-11282.appspot.com/o/fivePoints.png?alt=media&token=33ddfcb1-14d4-42b3-9b8c-983c7e0cebad" height={"150px"}/>
       </Header> */}
-
+      <button onClick={SignUp}>Sign Up</button>
       <button onClick={() => navigate("blog")}>Blog</button>
 
       <ClassComponent />
