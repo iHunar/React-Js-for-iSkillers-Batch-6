@@ -53,5 +53,5 @@ class ClassComponent extends Component {
 // export default ClassComponent;
 export default function () {
   const navigate = useNavigate();
-  return <ClassComponent navigate={navigate} />;
+  return <ClassComponent navigate={navigate}  />;
 }
