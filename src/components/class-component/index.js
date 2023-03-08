@@ -1,57 +1,33 @@
-import React, { Component } from "react";
-// class ClassComponent extends React.Component
-import { useNavigate } from "react-router-dom";
-import { AiFillAudio } from "react-icons/ai";
-import { CiBatteryFull,CiAlarmOff } from "react-icons/ci";
-
-class ClassComponent extends Component {
+import React from "react";
+class ClassComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: "",
-      show: true,
+      color: "red",
     };
   }
-
-  Update = () => {
-    this.setState({ name: "123" });
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ color: this.props.color });
+    }, 2000);
+  }
+  // static getDerivedStateFromProps(props, state) {
+  //   return { color: props.color };
+  // }
+  shouldComponentUpdate() {
+    return false;
+  }
+  UpdateColor = () => {
+    this.setState({ color: "green" });
   };
   render() {
-    let { name, show } = this.state;
-    let { navigate } = this.props;
+    let { color } = this.state;
     return (
       <div>
-        <h1>Class Component</h1>
-        <h1>{this.state.name}</h1>
-        <h1>{name}</h1>
-        {this.state.show && (
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => this.setState({ name: e.target.value })}
-          />
-        )}
-        {show && (
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => this.setState({ name: e.target.value })}
-          />
-        )}
-        <button onClick={() => this.setState({ show: !this.state.show })}>
-          Show
-        </button>
-        <button onClick={() => this.setState({ show: !show })}>Show</button>
-        <button onClick={this.Update}>Update</button>
-        <button onClick={() => this.props.navigate("/blog")}>Blog <CiBatteryFull /> <CiAlarmOff /></button>
-        <button onClick={() => navigate("/blog")}>Blog <AiFillAudio color="green" size={150}/></button>
-        
+        <h1 style={{ color: color }}>Class Component</h1>
+        <button onClick={this.UpdateColor}>Update Color</button>
       </div>
     );
   }
 }
-// export default ClassComponent;
-export default function () {
-  const navigate = useNavigate();
-  return <ClassComponent navigate={navigate}  />;
-}
+export default ClassComponent;
