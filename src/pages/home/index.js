@@ -64,12 +64,19 @@
 //   );
 // }
 
-import React from "react";
+import React, { useState } from "react";
 import ClassComponent from "../../components/class-component";
+import Testing from "../../components/testing";
 const Home = () => {
+  const [show, setShow] = useState(true);
   return (
     <div>
       <ClassComponent color="blue" />
+      <br />
+      <br />
+      <br />
+      <button onClick={() => setShow(!show)}>Disable Comp</button>
+      {show && <Testing />}
     </div>
   );
 };
